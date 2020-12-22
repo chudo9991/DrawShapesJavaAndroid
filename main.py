@@ -1,15 +1,19 @@
 import wikipedia
 import requests
+from speach import *
 
 def S():
     h = int(input("Введи высоту: "))
     l = int(input("Введи сторону: "))
     print("Площадь треугольника: ", 0.5*h*l)
+    say("Площадь треугольника:" + str(0.5*h*l))
 
 def wiki():
     wikipedia.set_lang("ru")
+    say("О чём ты хочешь узнать?")
     x = input("О чём ты хочешь узнать? ")
     print(wikipedia.summary(x))
+    say(wikipedia.summary(x, sentences=1))
 
 def weather():
     appid = "8a61dda3a2ef6afaf929cc1c4154f9ef"
@@ -32,8 +36,11 @@ def weather():
 
 
 print("Привет! Я - Джарвис, твой бот-помощник.")
-print("Чтобы выбрать команду введу соотвествующую цифру.")
+say("Привет! Я - ДжАрвис, твой бот-помощник.")
+print("Чтобы выбрать команду введи соотвествующую цифру.")
+say("Чтобы выбрать команду введи соотвествующую цифру.")
 print("Чтобы выйти введи 'exit'")
+say("Чтобы выйти введи эксит")
 
 answer = ""
 
